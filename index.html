@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WITH RESPECT TO SIR НИКОЛАЙ☭NIKOLAS AND HIS STUDENT MEHMED GRESIYENKO. 2026</title>
+  <style>
+    body{
+      font-family:sans-serif;
+      background:#fff;
+      color:#000;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:10px;
+      margin:0;
+    }
+    h2{ text-align:center;font-size:18px;margin:8px 0; }
+
+    /* ✅ Mobilde sayfa taşmasını engelle */
+    html, body { width:100%; overflow-x:hidden; }
+
+    /* ====== ÜST BAYRAK + LOGO SATIRI ====== */
+    #xzRow{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      width:100%;
+      max-width:420px;
+      margin:5px 0;
+    }
+
+    .flags-group{
+      display:flex;
+      align-items:center;
+      gap:2px; /* ✅ bayraklar birbirine yakın */
+    }
+
+    .flag{
+      width:48px;   /* ✅ biraz küçült */
+      height:48px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:34px;
+      line-height:1;
+    }
+
+    #headerLogo{
+      height:46px;              /* ✅ logo daha büyük */
+      width:auto;
+      display:block;
+      object-fit:contain;
+    }
+
+    /* ====== PAIR BUTONLARI + XZ BUTONU ====== */
+    #pairsWrap{
+      width:100%;
+      max-width:420px;
+      position:relative;
+    }
+
+    #pairs{
+      display:flex;flex-wrap:nowrap;overflow-x:auto;
+      margin:8px 0;width:100%;
+    }
+    .pair-btn{
+      padding:8px 12px;margin:4px;border:none;border-radius:6px;
+      background:#eee;cursor:pointer;font-size:14px;flex:0 0 auto;
+    }
+    .pair-btn.active{background:#333;color:#fff;}
+
+    /* ✅ XZ butonu: kırmızı, yazı beyaz, biraz küçük, Vol75+Vol50 üstünde */
+    #graphToggle{
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      top:-14px;                 /* ✅ Vol75-Vol50 üstünde */
+      height:22px;
+      font-size:12px;
+      font-weight:900;
+      padding:0 12px;
+      cursor:pointer;
+      border:none;
+      border-radius:6px;
+      background:#d93025;
+      color:#fff;
+      z-index:30;
+      white-space:nowrap;
+    }
+
+    /* ✅ Logo ile üst üste gelmesin: üst satırla doğal olarak ayrı */
+    /* (Logo üst satırda, XZ butonu pair satırının üstünde) */
+
+    #topbar{
+      width:100%;max-width:420px;display:flex;
+      justify-content:space-between;gap:6px;
+    }
+    #time,#price{
+      font-size:12px;font-weight:bold;padding:4px 8px;
+      border-radius:4px;min-width:80px;text-align:center;
+    }
+    #time{background:#000;color:#fff;margin-right:auto;}
+    #price{background:#999;color:#fff;margin-left:auto;}
+
+    /* ====== GRAFİK ====== */
+    #chartContainer{
+      position:relative;
+      width:100%;
+      max-width:400px;
+    }
+    #chart{
+      width:100%;
+      height:200px;
+      position:relative;
+      z-index:2; /* ✅ watermark altında kalsın */
+    }
+
+    /* ✅ Grafiğin içinde watermark logo */
+    #chartWatermark{
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      width:88%;
+      max-width:420px;
+      opacity:0.18;            /* ✅ biraz daha belirgin */
+      pointer-events:none;
+      z-index:1;
+      object-fit:contain;
+    }
+
+    #xzRowWrap{
+      width:100%;max-width:420px;position:relative;margin-top:1px;
+    }
+    #numbersTop{
+      display:flex;flex-wrap:nowrap;justify-content:flex-end;
+      overflow-x:hidden;width:100%;position:relative;padding:4px 0;
+    }
+    .num-box{
+      flex:0 0 22px;height:22px;
+      display:flex;justify-content:center;align-items:center;
+      margin:1px;color:#fff;font-size:12px;border-radius:4px;
+    }
+    .worm-line{
+      position:absolute;height:3px;border-top:3px solid;z-index:5;
+    }
+
+    .xz-pattern-box{
+      position:absolute;
+      border:2px solid #000;
+      border-radius:3px;
+      pointer-events:none;
+      z-index:6;
+    }
+
+    /* ===================== YENİ 2 SATIRLI IZGARA ===================== */
+    #gridWrap{
+      width:100%;
+      max-width:420px;
+      position:relative;
+      margin-top:2px;
+    }
+
+    #gridTopRow, #gridBottomRow{
+      display:flex;
+      flex-wrap:nowrap;
+      justify-content:flex-end;
+      width:100%;
+    }
+
+    .grid-cell{
+      flex:0 0 28px;
+      height:28px;
+      box-sizing:border-box;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      font-size:16px;
+      line-height:1;
+      padding:0;
+      margin:0;
+      border:2px solid #000;
+    }
+
+    .grid-top{ border-color:#0b57d0; }
+    .grid-bottom{ border-color:#d93025; }
+
+    /* ✅ Divider kısa */
+    #gridDivider{
+      width:100%;
+      display:flex;
+      justify-content:flex-end;
+      margin:0;
+      height:2px;
+      background:transparent;
+    }
+    #gridDividerLine{
+      height:2px;
+      background:#000;
+      width:0px; /* JS set */
+    }
+
+    .start-box{
+      position:absolute;
+      border:3px solid #000;  /* ✅ START çerçevesi siyah */
+      pointer-events:none;
+      z-index:50;
+      box-sizing:border-box;
+    }
+    .start-label{
+      position:absolute;
+      top:-12px;
+      left:50%;
+      transform:translateX(-50%);
+      background:orange;
+      color:#000;
+      font-size:10px;
+      font-weight:900;
+      padding:0 4px;
+      line-height:12px;
+      border-radius:2px;
+      white-space:nowrap;
+    }
+
+    #analysisBoxes{
+      width:100%;max-width:420px;
+      border-top:none; /* ✅ kırmızı sütunun altındaki siyah çizgi kaldırıldı */
+      margin-top:2px;
+      position:relative;
+    }
+
+    #xyBox{
+      position:relative;
+      width:100%;
+      max-width:420px;
+      height:350px;
+      border-bottom:2px solid #000;
+    }
+    #xyCanvas{
+      width:100%;
+      height:100%;
+      display:block;
+    }
+
+    /* ✅ Mobilde max-width 420 yerine %100 */
+    @media (max-width: 480px){
+      #pairsWrap, #pairs, #topbar, #xzRowWrap, #gridWrap, #analysisBoxes, #xzRow { max-width:100% !important; }
+      #chartContainer{ max-width:100% !important; }
+      .grid-cell{ flex:0 0 24px; height:24px; font-size:14px; }
+      #graphToggle{ top:-12px; height:20px; font-size:11px; padding:0 10px; }
+      .flag{ width:44px; height:44px; font-size:32px; }
+      #headerLogo{ height:44px; }
+    }
+  </style>
+</head>
+<body>
+  <h2>WITH RESPECT TO SIR НИКОЛАЙ☭NIKOLAS AND HIS STUDENT MEHMED GRESIYENKO. 2026</h2>
+
+  <!-- ✅ 3 bayrak sola yakın + orta logo + 3 bayrak sağa yakın -->
+  <div id="xzRow">
+    <div class="flags-group">
+      <span class="flag">🇷🇺</span>
+      <span class="flag">🇹🇷</span>
+      <span class="flag">🇵🇸</span>
+    </div>
+
+    <!-- ✅ Logo (GitHub RAW doğru format) -->
+    <img
+      id="headerLogo"
+      src="https://raw.githubusercontent.com/Samday68/Mehmed2025/main/IMG_9089.png"
+      alt="logo"
+      onerror="this.style.display='none'; console.error('Logo yüklenemedi: headerLogo');"
+    />
+
+    <div class="flags-group">
+      <span class="flag">🇮🇩</span>
+      <span class="flag">🇵🇸</span>
+      <span class="flag">🇷🇺</span>
+    </div>
+  </div>
+
+  <!-- ✅ XZ butonu Vol75 ve Vol50 üstünde -->
+  <div id="pairsWrap">
+    <button id="graphToggle" onclick="toggleGraph()">XZ</button>
+
+    <div id="pairs">
+      <button class="pair-btn active" onclick="selectPair(this,'R_100')">Volatility 100</button>
+      <button class="pair-btn" onclick="selectPair(this,'R_75')">Volatility 75</button>
+      <button class="pair-btn" onclick="selectPair(this,'R_50')">Volatility 50</button>
+      <button class="pair-btn" onclick="selectPair(this,'R_25')">Volatility 25</button>
+      <button class="pair-btn" onclick="selectPair(this,'R_10')">Volatility 10</button>
+    </div>
+  </div>
+
+  <div id="topbar">
+    <div id="time">GMT 00:00:00</div>
+    <div id="price">0,00</div>
+  </div>
+
+  <div id="chartContainer">
+    <!-- ✅ watermark logo -->
+    <img
+      id="chartWatermark"
+      src="https://raw.githubusercontent.com/Samday68/Mehmed2025/main/IMG_9089.png"
+      alt=""
+      onerror="this.style.display='none'; console.error('Logo yüklenemedi: chartWatermark');"
+    />
+    <canvas id="chart"></canvas>
+  </div>
+
+  <div id="xzRowWrap">
+    <div id="numbersTop"></div>
+  </div>
+
+  <div id="gridWrap">
+    <div id="gridTopRow"></div>
+    <div id="gridDivider"><div id="gridDividerLine"></div></div>
+    <div id="gridBottomRow"></div>
+  </div>
+
+  <div id="analysisBoxes">
+    <div id="xyBox">
+      <canvas id="xyCanvas"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    let ws;
+    let prices=[], digits=[], decimalDigits=[], combinedDigits=[];
+    let wormLinesTop=[];
+    let numColors=[];
+    let currentPair='R_100', currentGraph='XZ';
+
+    let patternWindowsXZ = [];
+
+    /* ===================== GRID + START STATE ===================== */
+    let gridHistory = [];
+    let startCooldown = 0;
+
+    // ✅ Start artık global tick index ile tutuluyor => kayma kesin
+    let xzTickCounter = 0; // her XZ tick geldiğinde artar
+    let startGlobalSpan = null; // { from:number, to:number } global index
+
+    function toggleGraph(){
+      if(currentGraph==='XZ') currentGraph='ZZ';
+      else if(currentGraph==='ZZ') currentGraph='Z.Z';
+      else currentGraph='XZ';
+      document.getElementById('graphToggle').innerText=currentGraph;
+      chart.update();
+      renderXYArea();
+      renderTwoRowGrid();
+      renderStartOverlay();
+    }
+
+    const ctx=document.getElementById('chart').getContext('2d');
+    const chart=new Chart(ctx,{
+      type:'line',
+      data:{
+        labels:Array.from({length:11},(_,i)=>(i+1).toString()),
+        datasets:[{
+          data:Array(11).fill(null),
+          borderColor:'black',
+          borderWidth:1.5,
+          backgroundColor:'rgba(0,0,0,0.05)',
+          pointBackgroundColor:Array(11).fill('black'),
+          pointRadius:2,
+          pointHoverRadius:3
+        }]
+      },
+      options:{
+        plugins:{legend:{display:false},tooltip:{enabled:false}},
+        scales:{y:{beginAtZero:false}},
+        animation:false
+      },
+      plugins:[{
+        afterDatasetsDraw(chart){
+          const {ctx}=chart;
+          const meta=chart.getDatasetMeta(0);
+
+          ctx.font='900 14px sans-serif';
+          ctx.textAlign='center';
+          ctx.textBaseline='bottom';
+
+          const decs=decimalDigits.slice(-11);
+          const digs=digits.slice(-11);
+          const combs=combinedDigits.slice(-11);
+          const colors=numColors.slice(-11);
+          const worms=wormLinesTop.slice(-11);
+
+          meta.data.forEach((pt,i)=>{
+            let t='';
+            if(currentGraph==='XZ')      t=decs[i]||'';
+            else if(currentGraph==='ZZ') t=digs[i]||'';
+            else                         t=(combs[i]||'').replace(',', '.');
+
+            if(pt && pt.x!==undefined){
+              ctx.fillStyle = (colors[i]||'#000');
+              ctx.fillText(t, pt.x, pt.y - 2);
+
+              const wormColor = worms[i];
+              if(wormColor==='blue' || wormColor==='red'){
+                ctx.strokeStyle = wormColor;
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.moveTo(pt.x - 5, pt.y - 2);
+                ctx.lineTo(pt.x + 5, pt.y - 2);
+                ctx.stroke();
+              }
+            }
+          });
+
+          const last = meta.data[meta.data.length-1];
+          if(last && last.x!==undefined){
+            ctx.strokeStyle='black';
+            ctx.lineWidth=1.5;
+            ctx.beginPath();
+            ctx.moveTo(chart.scales.x.left, last.y);
+            ctx.lineTo(last.x, last.y);
+            ctx.stroke();
+          }
+
+          if(currentGraph==='XZ' && patternWindowsXZ.length>0){
+            const vis = chart.data.datasets[0].data.length;
+            const N   = prices.length;
+            const firstIndex = N - vis;
+            const now = Date.now();
+
+            ctx.save();
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth   = 2;
+
+            patternWindowsXZ.forEach(win=>{
+              if(now - win.detectedAt > 2000) return;
+
+              const aG=win.startIndex;
+              const bG=win.startIndex+1;
+              const xG=win.endIndex-1;
+              const yG=win.endIndex;
+
+              const aL=aG-firstIndex;
+              const bL=bG-firstIndex;
+              const xL=xG-firstIndex;
+              const yL=yG-firstIndex;
+
+              if(aL<0||bL<0||xL<0||yL<0) return;
+              if(aL>=vis||bL>=vis||xL>=vis||yL>=vis) return;
+
+              function drawPairBox(i1,i2){
+                const p1=meta.data[i1];
+                const p2=meta.data[i2];
+                if(!p1||!p2) return;
+                const left   = Math.min(p1.x,p2.x) - 6;
+                const right  = Math.max(p1.x,p2.x) + 6;
+                const top    = Math.min(p1.y,p2.y) - 18;
+                const bottom = Math.max(p1.y,p2.y) + 8;
+                ctx.strokeRect(left,top,right-left,bottom-top);
+              }
+              drawPairBox(aL,bL);
+              drawPairBox(xL,yL);
+            });
+
+            ctx.restore();
+          }
+        }
+      }]
+    });
+
+    function selectPair(el,pair){
+      currentPair=pair;
+      document.querySelectorAll('.pair-btn').forEach(b=>b.classList.remove('active'));
+      el.classList.add('active');
+      if(ws) ws.close();
+      prices=[];digits=[];decimalDigits=[];combinedDigits=[];
+      wormLinesTop=[];numColors=[];
+      patternWindowsXZ=[];
+      document.getElementById('numbersTop').innerHTML='';
+
+      gridHistory=[];
+      startCooldown=0;
+      startGlobalSpan=null;
+      xzTickCounter=0;
+      renderTwoRowGrid();
+      renderStartOverlay();
+
+      renderXYArea();
+      startWS();
+    }
+
+    function updateWorm(){
+      if(prices.length<20) return;
+      const last20=prices.slice(-20);
+      const max=Math.max(...last20.slice(0,-1));
+      const min=Math.min(...last20.slice(0,-1));
+      const last=last20[last20.length-1];
+      let color='lightgreen';
+      if(last>max) color='blue';
+      else if(last<min) color='red';
+      wormLinesTop.push(color);
+      if(wormLinesTop.length>20) wormLinesTop.shift();
+    }
+
+    function renderWormLines(containerId,wormArray){
+      const c=document.getElementById(containerId);
+      c.querySelectorAll('.worm-line').forEach(e=>e.remove());
+      const boxes=c.querySelectorAll('.num-box');
+      boxes.forEach((box,idx)=>{
+        if(!wormArray[idx]) return;
+        const line=document.createElement('div');
+        line.className='worm-line';
+        line.style.width=box.offsetWidth+'px';
+        line.style.left=box.offsetLeft+'px';
+        line.style.top=(box.offsetTop+box.offsetHeight+0.2)+'px';
+        line.style.borderTopColor=wormArray[idx];
+        c.appendChild(line);
+      });
+    }
+
+    function oppositeColor(c){
+      if(c==='blue') return 'red';
+      if(c==='red')  return 'blue';
+      return null;
+    }
+
+    function getTickColor(idx){
+      if(idx<=0 || idx>=prices.length) return '#666';
+      const p=prices[idx], prev=prices[idx-1];
+      if(p>prev) return 'blue';
+      if(p<prev) return 'red';
+      return '#666';
+    }
+
+    function getTickValueXZ(idx){
+      if(idx<0 || idx>=decimalDigits.length) return 0;
+      const t=(decimalDigits[idx] ?? '0').toString();
+      const last=t.slice(-1);
+      let v=parseInt(last,10);
+      if(Number.isNaN(v)) v=0;
+      return v; // GRID 0 kalsın
+    }
+
+    function checkRulesForWindowXZ(startIndex,endIndex){
+      const A={value:getTickValueXZ(startIndex),   color:getTickColor(startIndex)};
+      const B={value:getTickValueXZ(startIndex+1), color:getTickColor(startIndex+1)};
+      const X={value:getTickValueXZ(endIndex-1),   color:getTickColor(endIndex-1)};
+      const Y={value:getTickValueXZ(endIndex),     color:getTickColor(endIndex)};
+
+      const aVal=A.value,bVal=B.value,xVal=X.value,yVal=Y.value;
+      const aCol=A.color,bCol=B.color,xCol=X.color,yCol=Y.color;
+      const matched=[];
+
+      if(Math.abs(aVal-xVal)===1 && Math.abs(bVal-yVal)===1) matched.push(1);
+      if(aVal===xVal && aCol===xCol && Math.abs(bVal-yVal)===1) matched.push(2);
+      if(aVal===xVal && aCol===xCol && bCol===yCol)             matched.push(3);
+      if(Math.abs(aVal-xVal)===1 && aCol===xCol){
+        const opp=oppositeColor(aCol);
+        if(opp && bCol===opp && yCol===opp) matched.push(4);
+      }
+      return matched;
+    }
+
+    function detectPatternWindowsXZ(){
+      const results=[];
+      if(currentGraph!=='XZ') return results;
+      const N=Math.min(prices.length,decimalDigits.length);
+      if(N<5) return results;
+
+      const lastIndex=N-1;
+      for(let len=5;len<=7;len++){
+        if(N<len) continue;
+        const start=N-len;
+        const end=lastIndex;
+        const matched=checkRulesForWindowXZ(start,end);
+        if(matched.length>0){
+          results.push({startIndex:start,endIndex:end,matchedRules:matched});
+        }
+      }
+      return results;
+    }
+
+    function updatePatternWindowsXZ(){
+      const now=Date.now();
+      const newOnes=detectPatternWindowsXZ();
+      newOnes.forEach(w=>{
+        const existing=patternWindowsXZ.find(p=>p.startIndex===w.startIndex && p.endIndex===w.endIndex);
+        if(existing){
+          existing.detectedAt=now;
+          existing.matchedRules=w.matchedRules;
+        }else{
+          patternWindowsXZ.push({...w,detectedAt:now});
+        }
+      });
+      patternWindowsXZ=patternWindowsXZ.filter(p=>now-p.detectedAt<=2000);
+    }
+
+    function renderPatternBoxesOnRow(){
+      const wrap=document.getElementById('xzRowWrap');
+      const row=document.getElementById('numbersTop');
+      if(!wrap||!row) return;
+
+      wrap.querySelectorAll('.xz-pattern-box').forEach(e=>e.remove());
+      if(currentGraph!=='XZ' || patternWindowsXZ.length===0) return;
+
+      const boxes=row.querySelectorAll('.num-box');
+      if(boxes.length===0) return;
+
+      const activeArr=decimalDigits;
+      const sliceLen=Math.min(11,activeArr.length);
+      const firstIndex=activeArr.length-sliceLen;
+      const rWrap=wrap.getBoundingClientRect();
+      const now=Date.now();
+
+      function drawPair(global1,global2){
+        const local1=global1-firstIndex;
+        const local2=global2-firstIndex;
+        if(local1<0||local2<0||local1>=sliceLen||local2>=sliceLen) return;
+
+        const b1=boxes[local1], b2=boxes[local2];
+        if(!b1||!b2) return;
+
+        const r1=b1.getBoundingClientRect();
+        const r2=b2.getBoundingClientRect();
+
+        const left  =Math.min(r1.left,r2.left)-rWrap.left-2;
+        const top   =Math.min(r1.top ,r2.top )-rWrap.top -2;
+        const right =Math.max(r1.right,r2.right)-rWrap.left+2;
+        const bottom=Math.max(r1.bottom,r2.bottom)-rWrap.top+2;
+
+        const box=document.createElement('div');
+        box.className='xz-pattern-box';
+        box.style.left  =left+'px';
+        box.style.top   =top +'px';
+        box.style.width =(right-left)+'px';
+        box.style.height=(bottom-top)+'px';
+        wrap.appendChild(box);
+      }
+
+      patternWindowsXZ.forEach(win=>{
+        if(now-win.detectedAt>2000) return;
+        const aG=win.startIndex;
+        const bG=win.startIndex+1;
+        const xG=win.endIndex-1;
+        const yG=win.endIndex;
+        drawPair(aG,bG);
+        drawPair(xG,yG);
+      });
+    }
+
+    /* ========= XY (AYNI) ========= */
+    function renderXYArea(){
+      const canvas=document.getElementById('xyCanvas');
+      if(!canvas) return;
+
+      const box=document.getElementById('xyBox');
+      const rect=box.getBoundingClientRect();
+      const dpr=window.devicePixelRatio||1;
+      canvas.width=rect.width*dpr;
+      canvas.height=rect.height*dpr;
+
+      const ctx=canvas.getContext('2d');
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      ctx.clearRect(0,0,rect.width,rect.height);
+
+      if(currentGraph!=='XZ') return;
+
+      const vis=Math.min(11,decimalDigits.length);
+      if(vis<2) return;
+
+      const decSlice=decimalDigits.slice(-vis);
+      const colorSlice=numColors.slice(-vis);
+
+      const values=decSlice.map(d=>{
+        let v=parseInt((d||'0'),10);
+        if(Number.isNaN(v)) v=0;
+        if(v===0) v=10;
+        return v;
+      });
+
+      const width=rect.width;
+      const height=rect.height;
+      const marginX=32;
+      const marginTop=14;
+      const marginBottom=24;
+
+      const stepX=(width-2*marginX)/(vis-1);
+      const xs=[];
+      for(let i=0;i<vis;i++) xs.push(marginX+i*stepX);
+
+      const baseY=height/2;
+      const maxAmp=(height/2)-marginTop-marginBottom;
+      const unitY=maxAmp/10;
+
+      function pointY(idx){
+        const v=values[idx];
+        const col=colorSlice[idx];
+        if(col==='blue') return baseY - v*unitY;
+        if(col==='red')  return baseY + v*unitY;
+        return baseY;
+      }
+
+      ctx.strokeStyle='#000';
+      ctx.lineWidth=2.0;
+      ctx.beginPath();
+      ctx.moveTo(marginX-10,baseY);
+      ctx.lineTo(width-marginX+10,baseY);
+      ctx.stroke();
+
+      const splitIndex=vis-6;
+      const splitX=xs[splitIndex] - stepX*0.15;
+
+      ctx.lineWidth=2.0;
+      ctx.strokeStyle='#0b57d0';
+      ctx.beginPath();
+      ctx.moveTo(splitX,marginTop-6);
+      ctx.lineTo(splitX,baseY);
+      ctx.stroke();
+
+      ctx.strokeStyle='#d93025';
+      ctx.beginPath();
+      ctx.moveTo(splitX,baseY);
+      ctx.lineTo(splitX,height-marginBottom+12);
+      ctx.stroke();
+
+      ctx.font='10px sans-serif';
+      ctx.textAlign='right';
+      ctx.textBaseline='middle';
+      for(let v=1;v<=10;v++){
+        const yUp=baseY - v*unitY;
+        const yDn=baseY + v*unitY;
+        if(yUp>marginTop-4){
+          ctx.fillStyle='#0b57d0';
+          ctx.fillText(String(v),marginX-16,yUp);
+        }
+        if(yDn<height-marginBottom+6){
+          ctx.fillStyle='#d93025';
+          ctx.fillText(String(v),marginX-16,yDn);
+        }
+      }
+
+      ctx.strokeStyle='#777';
+      ctx.lineWidth=2.0;
+      const startIdx=vis-6;
+      ctx.beginPath();
+      for(let i=startIdx;i<vis;i++){
+        const x=xs[i], y=pointY(i);
+        if(i===startIdx) ctx.moveTo(x,y);
+        else ctx.lineTo(x,y);
+      }
+      ctx.stroke();
+
+      ctx.textAlign='center';
+      ctx.textBaseline='middle';
+      ctx.font='bold 15px sans-serif';
+      for(let i=0;i<vis;i++){
+        const x=xs[i], y=pointY(i);
+        const col=colorSlice[i];
+        ctx.fillStyle=(col==='blue'?'#0b57d0':(col==='red'?'#d93025':'#666'));
+        const shown = (values[i]===10 ? 0 : values[i]);
+        ctx.fillText(String(shown),x,y);
+      }
+
+      ctx.strokeStyle='#ff6600';
+      ctx.lineWidth=2.3;
+
+      function drawVZ(i,j){
+        const v1=values[i], v2=values[j];
+        const c1=colorSlice[i], c2=colorSlice[j];
+        if(c1!==c2) return;
+        if(c1!=='blue' && c1!=='red') return;
+        if(Math.abs(v1-v2)!==1) return;
+
+        const x1=xs[i], x2=xs[j];
+        const y1=pointY(i), y2=pointY(j);
+
+        const yMid=(y1+y2)/2;
+        const extra = 10;
+        ctx.beginPath();
+        ctx.moveTo(x1 - extra, yMid);
+        ctx.lineTo(x2 + extra, yMid);
+        ctx.stroke();
+      }
+
+      for(let i=0;i<vis-1;i++) drawVZ(i,i+1);
+
+      const winStart=Math.max(0,vis-6);
+      for(let i=winStart;i<vis;i++){
+        for(let j=i+2;j<vis;j++) drawVZ(i,j);
+      }
+
+      const lastLocal=vis-1;
+      const lastVal=values[lastLocal];
+      const lastCol=colorSlice[lastLocal];
+      const pairs=[];
+      for(let k=1;k<=5;k++){
+        const i=lastLocal-k;
+        if(i<0) break;
+        const prevCol=colorSlice[i];
+        if(Math.abs(lastVal-values[i])===1 &&
+           lastCol!==prevCol &&
+           lastCol!=='#666' &&
+           prevCol!=='#666'){
+          pairs.push(i);
+        }
+      }
+      if(pairs.length>0){
+        ctx.strokeStyle='#000';
+        ctx.lineWidth=2;
+        const radius=10;
+        const xL=xs[lastLocal], yL=pointY(lastLocal);
+        ctx.beginPath();
+        ctx.arc(xL,yL,radius,0,Math.PI*2);
+        ctx.stroke();
+        pairs.forEach(i=>{
+          const x=xs[i], y=pointY(i);
+          ctx.beginPath();
+          ctx.arc(x,y,radius,0,Math.PI*2);
+          ctx.stroke();
+        });
+
+        ctx.font='bold 16px sans-serif';
+        ctx.textAlign='center';
+        ctx.textBaseline='middle';
+
+        let shownLast = (values[lastLocal]===10 ? 0 : values[lastLocal]);
+        ctx.fillStyle=(lastCol==='blue'?'#0b57d0':(lastCol==='red'?'#d93025':'#666'));
+        ctx.fillText(String(shownLast), xL, yL);
+
+        pairs.forEach(i=>{
+          const x=xs[i], y=pointY(i);
+          const col=colorSlice[i];
+          const shown = (values[i]===10 ? 0 : values[i]);
+          ctx.fillStyle=(col==='blue'?'#0b57d0':(col==='red'?'#d93025':'#666'));
+          ctx.fillText(String(shown), x, y);
+        });
+      }
+    }
+
+    /* ===================== GRID HESABI + START ===================== */
+
+    function isEven(n){ return (n % 2) === 0; }
+
+    // ✅ KURAL: Renk değiştiği an -> mavi üst, kırmızı alt (değer karşılaştırması yok)
+    function decideRow(prev, currV, effColor){
+      if(!prev){
+        return (effColor === 'blue') ? 'top' : 'bottom';
+      }
+
+      // aynı sayı aynı renk => aynı satır
+      if(currV === prev.v && effColor === prev.effColor){
+        return prev.row;
+      }
+
+      // ✅ RENK DEĞİŞTİYSE: doğrudan renk satırı
+      if(prev.effColor !== effColor){
+        return (effColor === 'blue') ? 'top' : 'bottom';
+      }
+
+      // renk aynıysa eski mantık (mavi: yükselirse üst, kırmızı: düşerse üst)
+      if(effColor === 'blue'){
+        return (currV > prev.v) ? 'top' : 'bottom';
+      }else{
+        return (currV < prev.v) ? 'top' : 'bottom';
+      }
+    }
+
+    function updateGridFromLast11(){
+      if(currentGraph !== 'XZ'){
+        gridHistory = [];
+        startGlobalSpan = null;
+        startCooldown = 0;
+        renderTwoRowGrid();
+        renderStartOverlay();
+        return;
+      }
+
+      const vis = Math.min(11, decimalDigits.length);
+      if(vis <= 0){
+        gridHistory = [];
+        renderTwoRowGrid();
+        renderStartOverlay();
+        return;
+      }
+
+      const decSlice = decimalDigits.slice(-vis).map(x=>{
+        let v = parseInt((x ?? '0'),10);
+        if(Number.isNaN(v)) v=0;
+        return v;
+      });
+      const colSlice = numColors.slice(-vis);
+
+      const newHist = [];
+      for(let i=0;i<vis;i++){
+        const raw = colSlice[i] || '#666';
+        const rawColor = (raw==='blue' || raw==='red') ? raw : '#666';
+        const prev = newHist.length ? newHist[newHist.length-1] : null;
+
+        // effective color (gri ise önceki)
+        let effColor = rawColor;
+        if(effColor !== 'blue' && effColor !== 'red'){
+          effColor = prev ? prev.effColor : 'blue';
+        }
+
+        const row = decideRow(prev, decSlice[i], effColor);
+        newHist.push({ v: decSlice[i], rawColor, effColor, row });
+      }
+
+      gridHistory = newHist;
+
+      if(startCooldown > 0) startCooldown--;
+
+      detectStartGlobal();
+
+      renderTwoRowGrid();
+      renderStartOverlay();
+      setTimeout(renderStartOverlay, 0);
+    }
+
+    function detectStartGlobal(){
+      if(currentGraph !== 'XZ') return;
+      if(startCooldown > 0) return;
+      if(gridHistory.length < 3) return;
+
+      // görünür aralığın global başlangıcı:
+      const vis = gridHistory.length;
+      const firstGlobal = xzTickCounter - vis;
+      const n = vis;
+
+      const a = gridHistory[n-3].v;
+      const b = gridHistory[n-2].v;
+      const c = gridHistory[n-1].v;
+
+      const cond1 = isEven(a) && isEven(b) && !isEven(c);
+      const cond2 = !isEven(a) && !isEven(b) && isEven(c);
+
+      if(cond1 || cond2){
+        startGlobalSpan = { from: firstGlobal + (n-3), to: firstGlobal + (n-1) };
+        startCooldown = 6;
+      }
+    }
+
+    function renderTwoRowGrid(){
+      const topRow = document.getElementById('gridTopRow');
+      const botRow = document.getElementById('gridBottomRow');
+      const dividerLine = document.getElementById('gridDividerLine');
+      if(!topRow || !botRow || !dividerLine) return;
+
+      topRow.innerHTML='';
+      botRow.innerHTML='';
+
+      const vis = gridHistory.length;
+      if(vis === 0){
+        dividerLine.style.width = '0px';
+        return;
+      }
+
+      for(let i=0;i<vis;i++){
+        const item = gridHistory[i];
+
+        const cellTop = document.createElement('div');
+        cellTop.className = 'grid-cell grid-top';
+
+        const cellBot = document.createElement('div');
+        cellBot.className = 'grid-cell grid-bottom';
+
+        const showColor = (item.rawColor==='blue' || item.rawColor==='red') ? item.rawColor : item.effColor;
+
+        if(item.row === 'top'){
+          cellTop.style.color = showColor;
+          cellTop.textContent = String(item.v);
+          cellBot.textContent = '';
+        }else{
+          cellBot.style.color = showColor;
+          cellBot.textContent = String(item.v);
+          cellTop.textContent = '';
+        }
+
+        topRow.appendChild(cellTop);
+        botRow.appendChild(cellBot);
+      }
+
+      // ✅ Divider genişliği: hücre ölçüsünü DOM'dan al (mobilde de doğru)
+      const firstCell = topRow.querySelector('.grid-cell');
+      const cellW = firstCell ? firstCell.getBoundingClientRect().width : 28;
+      dividerLine.style.width = (vis * cellW) + 'px';
+    }
+
+    function renderStartOverlay(){
+      document.querySelectorAll('.start-box').forEach(e=>e.remove());
+      if(!startGlobalSpan) return;
+      if(currentGraph !== 'XZ') return;
+
+      const wrap = document.getElementById('gridWrap');
+      const topRow = document.getElementById('gridTopRow');
+      const botRow = document.getElementById('gridBottomRow');
+      if(!wrap || !topRow || !botRow) return;
+
+      const topCells = topRow.querySelectorAll('.grid-cell');
+      const botCells = botRow.querySelectorAll('.grid-cell');
+
+      const vis = topCells.length;
+      if(vis === 0) return;
+
+      const firstGlobal = xzTickCounter - vis;
+      const fromLocal = startGlobalSpan.from - firstGlobal;
+      const toLocal   = startGlobalSpan.to   - firstGlobal;
+
+      if(fromLocal < 0 || toLocal >= vis) return;
+
+      const c1 = topCells[fromLocal];
+      const c2 = topCells[toLocal];
+      const b1 = botCells[fromLocal];
+      const b2 = botCells[toLocal];
+      if(!c1 || !c2 || !b1 || !b2) return;
+
+      const rWrap = wrap.getBoundingClientRect();
+      const r1 = c1.getBoundingClientRect();
+      const r2 = c2.getBoundingClientRect();
+      const rb1 = b1.getBoundingClientRect();
+      const rb2 = b2.getBoundingClientRect();
+
+      const left = Math.min(r1.left, rb1.left) - rWrap.left;
+      const right = Math.max(r2.right, rb2.right) - rWrap.left;
+      const top = Math.min(r1.top, rb1.top) - rWrap.top;
+      const bottom = Math.max(r2.bottom, rb2.bottom) - rWrap.top;
+
+      const box = document.createElement('div');
+      box.className = 'start-box';
+      box.style.left = (left - 2) + 'px';
+      box.style.top = (top - 2) + 'px';
+      box.style.width = (right - left + 4) + 'px';
+      box.style.height = (bottom - top + 4) + 'px';
+
+      const label = document.createElement('div');
+      label.className = 'start-label';
+      label.textContent = 'start';
+      box.appendChild(label);
+
+      wrap.appendChild(box);
+    }
+
+    // ========= WebSocket =========
+    function startWS(){
+      ws=new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1089');
+      ws.onopen=()=>{
+        ws.send(JSON.stringify({
+          ticks_history:currentPair,
+          end:"latest",
+          count:20,
+          subscribe:1
+        }));
+      };
+      ws.onmessage=(msg)=>{
+        const d=JSON.parse(msg.data);
+
+        if(d.history){
+          d.history.prices.forEach(p=>{
+            const price=parseFloat(p);
+            prices.push(price);
+            const lastTwo=Math.floor(price).toString().slice(-2);
+            digits.push(lastTwo);
+            const priceStr=price.toString();
+            const dec=(priceStr.split('.')[1]||'0');
+            decimalDigits.push(dec.slice(-1));
+            xzTickCounter++;
+            const lastInt=Math.floor(price).toString().slice(-1);
+            const firstDec=dec.charAt(0)||'0';
+            combinedDigits.push(lastInt+','+firstDec);
+            updateWorm();
+          });
+        }
+
+        if(d.tick){
+          const price=parseFloat(d.tick.quote);
+          prices.push(price); if(prices.length>20) prices.shift();
+
+          const lastTwo=Math.floor(price).toString().slice(-2);
+          digits.push(lastTwo); if(digits.length>20) digits.shift();
+
+          const priceStr=d.tick.quote.toString();
+          const dec=(priceStr.split('.')[1]||'0');
+          decimalDigits.push(dec.slice(-1)); if(decimalDigits.length>20) decimalDigits.shift();
+          xzTickCounter++;
+
+          const lastInt=Math.floor(price).toString().slice(-1);
+          const firstDec=dec.charAt(0)||'0';
+          combinedDigits.push(lastInt+','+firstDec);
+          if(combinedDigits.length>20) combinedDigits.shift();
+
+          updateWorm();
+
+          const priceEl=document.getElementById('price');
+          priceEl.innerText=price.toFixed(2).replace('.',',');
+          if(prices.length>1){
+            const prev=prices[prices.length-2];
+            if(price>prev)      priceEl.style.background='blue';
+            else if(price<prev) priceEl.style.background='red';
+            else                priceEl.style.background='#999';
+          }
+        }
+
+        const row=document.getElementById('numbersTop');
+        row.innerHTML='';
+        numColors=[];
+        let activeArr=(currentGraph==='XZ'
+                        ? decimalDigits
+                        : (currentGraph==='ZZ'?digits:combinedDigits));
+        const sliceArr=activeArr.slice(-11);
+        for(let i=0;i<sliceArr.length;i++){
+          const globalIndex=activeArr.length-11+i;
+          const up  = globalIndex>0 && prices[globalIndex]>prices[globalIndex-1];
+          const down= globalIndex>0 && prices[globalIndex]<prices[globalIndex-1];
+          const color=up?'blue':(down?'red':'#666');
+          numColors.push(color);
+          const box=document.createElement('div');
+          box.className='num-box';
+          box.style.background=color;
+          box.innerText=(currentGraph==='Z.Z')
+            ? (sliceArr[i]||'').replace(',', '.')
+            : (sliceArr[i]||'0');
+          row.appendChild(box);
+        }
+
+        const last11=prices.slice(-11);
+        chart.data.datasets[0].data=last11;
+        chart.data.datasets[0].pointBackgroundColor=last11.map((p,i)=>{
+          if(i===0) return 'gray';
+          if(p>last11[i-1]) return 'blue';
+          if(p<last11[i-1]) return 'red';
+          return 'gray';
+        });
+        chart.data.datasets[0].pointBorderColor=Array(last11.length).fill('transparent');
+        chart.data.labels=Array.from({length:last11.length},(_,i)=>(i+1).toString());
+
+        updatePatternWindowsXZ();
+        chart.update();
+
+        updateGridFromLast11();
+
+        setTimeout(()=>{
+          renderWormLines('numbersTop',wormLinesTop.slice(-11));
+          renderPatternBoxesOnRow();
+          renderXYArea();
+          renderStartOverlay();
+        },40);
+      };
+    }
+
+    function updateTime(){
+      const now=new Date();
+      const hh=now.getUTCHours().toString().padStart(2,'0');
+      const mm=now.getUTCMinutes().toString().padStart(2,'0');
+      const ss=now.getUTCSeconds().toString().padStart(2,'0');
+      document.getElementById('time').innerText=`GMT ${hh}:${mm}:${ss}`;
+    }
+    setInterval(updateTime,1000);
+    updateTime();
+    startWS();
+    window.addEventListener('resize',()=>{
+      setTimeout(()=>{
+        renderXYArea();
+        renderStartOverlay();
+        // divider yeniden ölçülsün
+        renderTwoRowGrid();
+      },100);
+    });
+  </script>
+</body>
+</html>
